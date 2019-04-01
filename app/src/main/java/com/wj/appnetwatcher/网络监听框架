@@ -1,0 +1,11 @@
+实现思路：
+   实现方法 组件化 新建moudle
+           新建一个NetWorkReceiver extends BroadCaseReceiver
+           新建一个NetObserver 实现两个方法 onConnect(NetType type)
+           NetType 枚举  NONE，WIFI  CMNET CMWAP WIFI
+           工具类NetWorkUtil 实现3个方法  1 获取是否有可用网络  2  获取网络类型  3 跳转设置网络界面
+           NetWorkManager 单例   3个方法  init()->添加IntentFilter ->RegisterBoradcastReceiver 2 Application设置  3.设置Listener
+           BaseActivity 只需要调用     NetWorkManager.getDefault().init(getApplication());
+                                      NetWorkManager.getDefault().setListener(this);
+
+
